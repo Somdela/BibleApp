@@ -25,6 +25,17 @@
     "plugins": [
       "expo-router",
       "expo-sqlite"
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "1500358d-551e-4bf5-b80f-815743634fdb"
+      }
+    },
+    "owner": "mrrobot212s-team",
+    "runtimeVersion": "54.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/1500358d-551e-4bf5-b80f-815743634fdb"
+    }
   }
 }
