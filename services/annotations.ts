@@ -1,10 +1,6 @@
 import { type HighlightColor } from '@/constants/theme';
 import { getDb } from '@/services/db';
 
-export type Highlight = { chapterId: string; verseNumber: string; color: HighlightColor };
-export type Note = { chapterId: string; verseNumber: string; text: string; updatedAt: number };
-export type Bookmark = { chapterId: string; verseNumber: string; createdAt: number };
-
 export type ChapterAnnotations = {
   highlights: Record<string, HighlightColor>;
   notes: Record<string, string>;

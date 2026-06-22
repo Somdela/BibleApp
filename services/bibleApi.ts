@@ -144,12 +144,12 @@ export async function searchVerses(bibleId: string, query: string): Promise<Sear
   }>(`/bibles/${bibleId}/search`, { query, limit: '30', sort: 'relevance' });
 
   return (data.verses ?? []).map((verse) => {
-    const [, chapterNumber, verseNumber] = verse.id.split('.');
+    const parts = verse.id.split('.');
     return {
       id: verse.id,
       bookId: verse.bookId,
-      chapterNumber: chapterNumber ?? '1',
-      verseNumber: verseNumber ?? '1',
+      chapterNumber: parts[1] ?? '1',
+      verseNumber: parts[2] ?? '1',
       text: stripTags(verse.text).replace(/\s+/g, ' ').trim(),
     };
   });

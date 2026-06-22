@@ -23,7 +23,11 @@ export async function getLastPosition(): Promise<LastPosition | null> {
   const raw = await getStateValue(LAST_POSITION_KEY);
   if (!raw) return null;
   try {
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    if (typeof parsed?.bookId === 'string' && typeof parsed?.chapterNumber === 'string') {
+      return parsed;
+    }
+    return null;
   } catch {
     return null;
   }
